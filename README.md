@@ -88,3 +88,15 @@ git pull origin main   # Pull changes from the remote 'main' branch
 git branch feature-a   # Create a new branch for feature development
 git commit -m "Message"    # Commit changes to the feature branch
 ```
+### Additional Resources
+
+
+- [GitHub Markdown Guide]
+- [Git Guides]
+
+[GitHub Markdown Guide]: <https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax>
+[Git Guides]: <https://github.com/git-guides/>
+
+## License
+
+MIT
