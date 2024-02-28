@@ -1,6 +1,3 @@
-# git-commands
-Added all git commands
-
 # Git commands
 
 This cheatsheet provides a quick reference for common Git commands and workflows.
