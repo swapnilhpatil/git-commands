@@ -16,7 +16,7 @@ git config -l   # List current configurations
 ```bash
 git init .   # Initialize a new Git repository in the current directory
 ```
-Note: Do not delete the .git folder as it contains the repository's metadata.
+**Note*: Do not delete the .git folder as it contains the repository's metadata.
 
 ### Create a new repository on the command line
 ```bash
@@ -85,15 +85,59 @@ git pull origin main   # Pull changes from the remote 'main' branch
 git branch feature-a   # Create a new branch for feature development
 git commit -m "Message"    # Commit changes to the feature branch
 ```
+
+# Git Rebase Commands and Explanations
+
+Git rebase is a powerful tool used to integrate changes from one branch onto another. It is commonly used to maintain a clean, linear project history. Here are some essential Git rebase commands along with explanations:
+
+### git rebase
+
+```bash
+git rebase <branch-name>
+```
+
+**Explanation**: This command applies the changes in the current branch onto another branch. It moves the entire feature branch to begin on the tip of the <branch-name> branch, effectively incorporating changes from the other branch into the current branch.
+### git rebase --continue
+```bash
+git rebase --continue
+```
+**Explanation**: After resolving conflicts during a rebase, this command allows you to continue the rebase process. It tells Git to proceed with the rebase operation once you have resolved any conflicts that occurred during the rebase.
+### git rebase --abort
+```bash
+git rebase --abort
+```
+
+**Explanation**: This command aborts the current rebase operation and resets the branch to its state before the rebase began. It's useful if you encounter conflicts or other issues during the rebase process and want to start over.
+### git rebase -i
+```bash
+git rebase -i <commit-hash>
+```
+**Explanation**: The interactive rebase command allows you to interactively rebase commits. It opens an editor where you can choose which commits to pick, squash, edit, or drop. It's useful for cleaning up commit history, combining commits, or rearranging commits before pushing to a shared repository.
+### git rebase --onto
+```bash
+git rebase --onto <new-base> <old-base>
+```
+
+**Explanation**: This command allows you to move a series of commits from one branch to another. It's useful for rewriting history, such as moving a feature branch onto a different base branch, or for extracting changes from one branch to another.
+### git pull --rebase
+```bash
+git pull --rebase
+```
+**Explanation**: When pulling changes from a remote repository, using git pull --rebase instead of git pull will rebase your local commits on top of the upstream branch, rather than merging the remote changes into your local branch. It helps maintain a cleaner commit history.
+### git push --force-with-lease
+```bash
+git push --force-with-lease
+```
+**Explanation**: When you need to push changes after rebasing commits or making changes to the commit history, git push --force-with-lease allows you to force push changes to the remote repository without overwriting changes that others may have made. It's safer than git push --force.
+
 ### Additional Resources
-
-
 - [GitHub Markdown Guide]
 - [Git Guides]
 
-[GitHub Markdown Guide]: <https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax>
-[Git Guides]: <https://github.com/git-guides/>
 
 ## License
 
-MIT
+**MIT**
+
+[GitHub Markdown Guide]: <https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax>
+[Git Guides]: <https://github.com/git-guides/>
